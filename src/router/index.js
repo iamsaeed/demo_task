@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Store from "../store";
 
 import MainLayout from '../layouts/MainLayout.vue'
@@ -8,7 +8,7 @@ import Users from '../views/Users.vue'
 import SignIn from '../views/Signin.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/users', component: MainLayout, children : [
         { path: '', name: 'users', component: Users, meta : {auth : true} }
