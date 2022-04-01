@@ -32,7 +32,7 @@ export default {
   background-color: var(--vt-c-danger);
 }
 
-.alert-danger {
+.alert-success {
   background-color: var(--vt-c-success);
 }
 

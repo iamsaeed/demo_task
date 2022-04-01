@@ -15,7 +15,6 @@
     </form>
   </div>
 </template>
-
 <script>
 import Notification from "../components/Notification.vue";
 export default {
