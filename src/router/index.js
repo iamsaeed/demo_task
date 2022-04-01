@@ -10,12 +10,12 @@ import SignIn from '../views/Signin.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '', component: MainLayout, children : [
-        { path: '/users', name: 'users', component: Users, meta : {auth : true} }
+    { path: '/users', component: MainLayout, children : [
+        { path: '', name: 'users', component: Users, meta : {auth : true} }
       ]
     },
-    { path: '', component: AuthLayout, children : [
-        { path: '/sign-in', name: 'sign.in', component: SignIn, meta : {auth : false} }
+    { path: '/', component: AuthLayout, children : [
+        { path: '', name: 'sign.in', component: SignIn, meta : {auth : false} }
       ]
     },
   ]
@@ -24,13 +24,13 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   if (to.meta.auth && !Store.getters.isLoggedIn) {
     return {
-      path: '/sign-in',
+      path: '/',
     }
   }
 
   if (!to.meta.auth && Store.getters.isLoggedIn) {
     return {
-      path: '',
+      path: '/users',
     }
   }
 })

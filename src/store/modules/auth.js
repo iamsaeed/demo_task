@@ -29,7 +29,7 @@ const actions = {
     },
     logout(context){
         context.commit('setLogoutState', false)
-        router.push({name: 'sing.in'})
+        router.push('/')
     }
 };
 
